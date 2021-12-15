@@ -51,16 +51,6 @@ local function checkIOCStrings(input)
     return cve_found
 end
 
---- Validates an incoming request body and checks it for IOCs of CVE2021-44228
-local function inspectBody(request_method,body)
-
-end
-
---- Validates an incoming request and checks all Headers as well as the URI for IOCs 
---- of CVE2021-44228
-local function inspect(uri,headers)
-
-end
 
 function Log4jKongWaf:rewrite(config)
     if conf.enabled then
@@ -68,7 +58,11 @@ function Log4jKongWaf:rewrite(config)
         local headers = kong.request.get_headers()
         local body = kong.request.get_raw_body()
         local uri = kong.request.get_path_with_query()
-
-        if checkIOCStrings(body) == 1 or checkIOCStrings(uri) == 1 or checkIOCStrings(headers) == 1
+         --- Validates an incoming request body and checks it for IOCs of CVE2021-44228
+	 --- Validates an incoming request and checks all Headers as well as the URI for IOCs 
+         --- of CVE2021-44228
+        if (checkIOCStrings(body) == 1 or checkIOCStrings(uri) == 1 or checkIOCStrings(headers) == 1) then
+	   return kong.response.error(403, "WAF Activated",{["Content-Type"] = "text/html"})
+	end
     end
 end
