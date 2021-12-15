@@ -8,7 +8,7 @@ local Log4jKongWaf = {
 local function checkIOCStrings(input)
     local cve_found = 0
     local iocList = {
-    "${jndi:ldap:/",
+                "${jndi:ldap:/",
 		"${jndi:rmi:/",
 		"${jndi:ldaps:/",
 		"${jndi:dns:/",
