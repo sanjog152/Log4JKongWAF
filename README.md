@@ -1,6 +1,7 @@
 # Log4JKongWAF
 This plugin will mitigate CVE2021-44228 in Kong layer
 
+ref nginx plugin: https://github.com/tippexs/nginx-njs-waf-cve2021-44228 
 # How to use it.
 Use this plugin as Kong Cluster Plugin
 
