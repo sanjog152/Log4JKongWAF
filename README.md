@@ -9,7 +9,7 @@ Use this plugin as Kong Cluster Plugin
 
 ```
 apiVersion: configuration.konghq.com/v1
-kind: KongPlugin
+kind: KongClusterPlugin
 metadata:
   name: <object name>
   namespace: <object namespace>
