@@ -2,7 +2,7 @@
 This plugin will mitigate CVE2021-44228 in Kong layer
 
 # How to use it.
-Use this plugin in as Kong Cluster Plugin
+Use this plugin as Kong Cluster Plugin
 
 ### In DBless mode.
 
